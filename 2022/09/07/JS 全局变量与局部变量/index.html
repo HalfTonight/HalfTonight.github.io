@@ -100,7 +100,7 @@
           <h2 class="title-sub-wrap">
             <strong>John Doe</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-06T16:21:19.177Z" itemprop="datePublished">2022-09-07</time>
+            <time  class="article-date" datetime="2022-09-06T16:21:19.172Z" itemprop="datePublished">2022-09-07</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -129,48 +129,31 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>计算属性能完成的操作侦听属性（watch）都可以完成，但是侦听属性能完成的操作计算属性不一定你那个完成，例如一些定时器的异步操作，计算属性依靠返回值完成操作,二侦听属性是依靠实际代码完成修改操作的。如果在计算属性中加入定时器，那么返回值是返回给定时器函数，而不是计算属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computer</span>:&#123;</span><br><span class="line">	<span class="title function_">fullName</span>():&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstName</span> + <span class="variable language_">this</span>.<span class="property">lastName</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">watch</span>:&#123;</span><br><span class="line">    <span class="comment">//需要提前定义变量（属性）</span></span><br><span class="line">    <span class="title function_">fullNme</span>(<span class="params">val</span>)&#123;</span><br><span class="line">        <span class="title function_">setTimeOut</span>(<span class="function">() =&gt;</span>&#123;    <span class="comment">//</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">fullName</span> = <span class="variable language_">this</span>.<span class="property">firstName</span> + <span class="variable language_">this</span>.<span class="property">lastName</span></span><br><span class="line">        &#125;,<span class="number">1000</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="JS-全局变量与局部变量11"><a href="#JS-全局变量与局部变量11" class="headerlink" title="JS 全局变量与局部变量11"></a>JS 全局变量与局部变量11</h2><ul>
+<li><p>全局变量：在代码块中使用var定义的，或者在函数中不使用var定义的</p>
+<p>如下所示，变量a与b以及函数test都是全局变量,windown指当前的浏览器窗口。它也是当前页面的顶层对象，即最高一层的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> a= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        b=<span class="number">10</span> ;<span class="comment">//等价于windown.b=10;</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>Vue自身可以检测对象内部值的改变，但watch默认不可以，若要使用，则需要设置deep：true（配置完成则可以深度监听，监听对象内部属性值变化）</p>
-<p>Vue管理的函数有methods，计算属性中的简写形式，监听属性里的简写形式，写成默认函数，一些定时器等函数则写成箭头函数，这样可以把函数内部的this设置为当前组件。便于数据的操作。</p>
+
+</li>
+<li><p>局部变量：</p>
+<p>如下所示，变量c属于局部变量</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> c=<span class="number">20</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>全局变量与window上的变量区别：</p>
+<ol>
+<li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。</li>
+<li>全局变量是 window 对象的属性。</li>
+<li>全局函数是 window 对象的方法</li>
+<li>windown上定义的变量可以通过delete删除，而直接定义的全局变量是不能删除的</li>
+<li><img src="C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\image-20210801225502260.png" alt="image-20210801225502260"></li>
+</ol>
 
       </section>
 
       
-      
-        <nav class="article-nav">
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/09/07/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">(no title)</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/09/07/ES%E6%96%B0%E7%89%B9%E6%80%A7%20-%20%E5%89%AF%E6%9C%AC/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">(no title)</h2>
-        </a>
-      
-      <div class="card-text--row">Older</div>
-    </div>
-  </article>
-</div>
-          
-        </nav>
       
 
       <section class="page-message-container layout-padding">
@@ -204,7 +187,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>11</span>
+        <span>1</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">

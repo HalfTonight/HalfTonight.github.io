@@ -71,6 +71,153 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS 全局变量与局部变量 - 副本 (3)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(3)/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T13:25:01.735Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-全局变量与局部变量11"><a href="#JS-全局变量与局部变量11" class="headerlink" title="JS 全局变量与局部变量11"></a>JS 全局变量与局部变量11</h2><ul>
+<li><p>全局变量：在代码块中使用var定义的，或者在函数中不使用var定义的</p>
+<p>如下所示，变量a与b以及函数test都是全局变量,windown指当前的浏览器窗口。它也是当前页面的顶层对象，即最高一层的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> a= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        b=<span class="number">10</span> ;<span class="comment">//等价于windown.b=10;</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>局部变量：</p>
+<p>如下所示，变量c属于局部变量</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> c=<span class="number">20</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>全局变量与window上的变量区别：</p>
+<ol>
+<li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。</li>
+<li>全局变量是 window 对象的属性。</li>
+<li>全局函数是 window 对象的方法</li>
+<li>windown上定义的变量可以通过delete删除，而直接定义的全局变量是不能删除的</li>
+<li><img src="C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\image-20210801225502260.png" alt="image-20210801225502260"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://halftonight.github.io/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(3)/" data-id="cl7t30oeg00008wwaalboguow" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JS 全局变量与局部变量 - 副本 (2)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(2)/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T13:25:01.572Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-全局变量与局部变量11"><a href="#JS-全局变量与局部变量11" class="headerlink" title="JS 全局变量与局部变量11"></a>JS 全局变量与局部变量11</h2><ul>
+<li><p>全局变量：在代码块中使用var定义的，或者在函数中不使用var定义的</p>
+<p>如下所示，变量a与b以及函数test都是全局变量,windown指当前的浏览器窗口。它也是当前页面的顶层对象，即最高一层的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> a= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        b=<span class="number">10</span> ;<span class="comment">//等价于windown.b=10;</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>局部变量：</p>
+<p>如下所示，变量c属于局部变量</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> c=<span class="number">20</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>全局变量与window上的变量区别：</p>
+<ol>
+<li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。</li>
+<li>全局变量是 window 对象的属性。</li>
+<li>全局函数是 window 对象的方法</li>
+<li>windown上定义的变量可以通过delete删除，而直接定义的全局变量是不能删除的</li>
+<li><img src="C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\image-20210801225502260.png" alt="image-20210801225502260"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://halftonight.github.io/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(2)/" data-id="cl7t30oen00018wwab08j34x5" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JS 全局变量与局部变量 - 副本" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T13:25:01.412Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-全局变量与局部变量11"><a href="#JS-全局变量与局部变量11" class="headerlink" title="JS 全局变量与局部变量11"></a>JS 全局变量与局部变量11</h2><ul>
+<li><p>全局变量：在代码块中使用var定义的，或者在函数中不使用var定义的</p>
+<p>如下所示，变量a与b以及函数test都是全局变量,windown指当前的浏览器窗口。它也是当前页面的顶层对象，即最高一层的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> a= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        b=<span class="number">10</span> ;<span class="comment">//等价于windown.b=10;</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>局部变量：</p>
+<p>如下所示，变量c属于局部变量</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> c=<span class="number">20</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>全局变量与window上的变量区别：</p>
+<ol>
+<li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。</li>
+<li>全局变量是 window 对象的属性。</li>
+<li>全局函数是 window 对象的方法</li>
+<li>windown上定义的变量可以通过delete删除，而直接定义的全局变量是不能删除的</li>
+<li><img src="C:\Users\zhang\AppData\Roaming\Typora\typora-user-images\image-20210801225502260.png" alt="image-20210801225502260"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://halftonight.github.io/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC/" data-id="cl7t30oet00038wwacxobd2mx" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-JS 全局变量与局部变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/07/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" class="article-date">
@@ -108,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://halftonight.github.io/2022/09/07/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" data-id="cl7t2vd2l000044wa2xh8fzfd" data-title="" class="article-share-link">Share</a>
+      <a data-url="https://halftonight.github.io/2022/09/07/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" data-id="cl7t30oep00028wwa1lcqhbyp" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -149,6 +296,18 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(3)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC%20(2)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/08/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%20-%20%E5%89%AF%E6%9C%AC/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2022/09/07/JS%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">(no title)</a>
